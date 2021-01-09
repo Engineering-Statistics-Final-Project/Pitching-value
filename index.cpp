@@ -31,7 +31,10 @@ int main() {
         fstream FILE_NAME2;
         FILE_NAME2.open(team_name,ios::out);
         for(auto &t:rec){
-            FILE_NAME2<<t.second<<endl;
+            for(int j=0;j<t.second.length();j++){
+                if(t.second[j]!='$')FILE_NAME2<<t.second[j];
+            }
+            FILE_NAME2<<"\n";
         }
         FILE_NAME2.close();
     }
